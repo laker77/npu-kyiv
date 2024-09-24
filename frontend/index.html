@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Національна Поліція України</title>
+    <link rel="stylesheet" href="css/home.css?v=<?php echo time(); ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Національна поліція</div>
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="http://j97416qp.beget.tech/evak/">Служба евакуації автомобілів</a>
+            <a href="http://j97416qp.beget.tech/gsu/index.php">Слідче управління</a>
+            <a href="http://j97416qp.beget.tech/login/index.php">Вхід</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" style="display: flex; align-items: center; height: 100vh; background-image: url('img/back.png'); background-size: cover; background-position: center;">
+        <div class="description" style="flex: 1; padding: 20px; color: white; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); margin-top: -6cm;">
+            <h1>Національна поліція України</h1>
+            <p>Ласкаво просимо на інформаційну сторінку Національної поліції Києва. Наша місія полягає у забезпеченні безпеки, захисту прав та свобод громадян, а також підтримці правопорядку в місті.</p>
+            <p>Ми працюємо над тим, щоб кожен мешканець столиці почувався у безпеці та захищеним. Патрульна поліція активно взаємодіє з громадою, впроваджуючи ініціативи, що сприяють довірі між поліцією та громадянами.</p>
+            <p>Дякуємо, що ви з нами. Разом ми можемо зробити Київ ще безпечнішим!</p>
+        </div>
+        <div class="image" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <img src="img/police_girl.png" alt="Поліцейський" style="max-width: 80%; height: auto;">
+        </div>
+    </section>
+
+    <section id="evacuation" class="section">
+        <h2>Служба евакуації автомобілів</h2>
+        <p>Служба евакуації патрульної поліції міста Києва займається евакуацією транспортних засобів, які неправильно припарковані. Наша мета — забезпечити безпеку на дорогах, покращити дорожній рух і звільнити місце для автомобілів, які дотримуються правил паркування.</p>
+
+        <p>Цей сайт дозволяє жителям міста перевірити, де і за що їх автомобіль був евакуйований. Ви можете дізнатися всю необхідну інформацію про евакуацію вашого автомобіля, використовуючи його номер.</p>
+
+        <h3>Статистика евакуації</h3>
+        <div class="statistics">
+            <div class="stat-card">
+                <h3>Сьогодні</h3>
+                <p><?php include '../backend/index.php'; echo $evacuation_stats['count_today']; ?></p>
+            </div>
+            <div class="stat-card">
+                <h3>За тиждень</h3>
+                <p><?php include '../backend/index.php'; echo $evacuation_stats['count_week']; ?></p>
+            </div>
+            <div class="stat-card">
+                <h3>Всього</h3>
+                <p><?php include '../backend/index.php'; echo $evacuation_stats['count_total']; ?></p>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <a href="http://j97416qp.beget.tech/evak/" class="button">Перейти на сайт, щоб дізнатися деталі евакуації</a>
+        </div>
+    </section>
+
+    <section id="investigation" class="section">
+        <h2>Слідче управління</h2>
+        <p>Головне слідче управління Національної поліції м. Києва — це ключовий державний орган, що виконує важливі функції в системі правоохоронних органів України. Основна мета управління полягає в розслідуванні кримінальних та адміністративних правопорушень, забезпечуючи законність і правопорядок у столиці країни.</p>
+
+        <h3>Статистика слідчого управління</h3>
+        <div class="statistics">
+            <div class="stat-item">
+                <strong>Загальна кількість справ:</strong> <span><?php include '../backend/index.php'; echo $investigation_stats['total_cases']; ?></span>
+            </div>
+            <div class="stat-item">
+                <strong>Відкриті справи:</strong> <span><?php include '../backend/index.php'; echo $investigation_stats['open_cases']; ?></span>
+            </div>
+            <div class="stat-item">
+                <strong>Закриті справи:</strong> <span><?php include '../backend/index.php'; echo $investigation_stats['closed_cases']; ?></span>
+            </div>
+        </div>
+        
+        <div class="statistics">
+            <a href="http://j97416qp.beget.tech/gsu/index.php" class="button">Перейти на сайт, щоб написати заяву в слідчий відділ</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 НПУ UKRAINE GTA. Всі права захищені.</p>
+        <p>Сайт розробив Полковник Іван Громов.</p>
+    </footer>
+
+</body>
+</html>
